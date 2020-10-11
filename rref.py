@@ -65,6 +65,3 @@ def row_reducer(): # Perform the Gauss-Jordan Method for a given matrix, inputte
                 m[u][v] = abs(m[u][v])
 
     print(m)
-
-
-row_reducer()
