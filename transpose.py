@@ -1,4 +1,6 @@
-def transpose():  # Take the transpose of a given matrix, inputted by the user
+# All matrix entries must be real numbers.
+
+def transpose():  # Print the transpose of a given matrix, inputted by the user
 
     rows = input("Please input the number of rows in the matrix:")  # set number of rows
     while int(rows) == ValueError or int(rows) < 1:
@@ -15,15 +17,15 @@ def transpose():  # Take the transpose of a given matrix, inputted by the user
     for i in range(1, int(rows) + 1):
         for j in range(1, int(columns) + 1):
             value = input("Please input the value at Row " + str(i) + ", Column " + str(j) + " of the matrix:")
-            while int(value) == ValueError:
+            while float(value) == ValueError:
                 value = input("Error: value must be a number:")
-            m[i - 1].append(int(value))
+            m[i - 1].append(float(value))
 
     m_transpose = []  # create transposed matrix
     for k in range(0, int(columns)):
         m_transpose.append([])
 
-    for c in range(0, int(columns)):
+    for c in range(0, int(columns)): # put the values in their correct slots, print out rows of transposed matrix
         for r in range(0, int(rows)):
             m_transpose[c].append(m[r][c])
-        print(m_transpose[c])
+        print("Row " + str(c + 1) + ": " + str(m_transpose[c]))
